@@ -1,0 +1,15 @@
+# Copy this file to terraform.tfvars and fill in your own values.
+# terraform.tfvars is git-ignored and must NOT be committed.
+# The private key file itself lives outside the repo (e.g. C:\Users\<you>\.oci\).
+
+tenancy_ocid     = "ocid1.tenancy.oc1..xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+user_ocid        = "ocid1.user.oc1..xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+fingerprint      = "xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx"
+private_key_path = "C:/Users/<you>/.oci/oci_api_key.pem"
+region           = "me-jeddah-1"
+
+# OCID of an existing public subnet (created in the Console in Lab 1)
+subnet_ocid = "ocid1.subnet.oc1.me-jeddah-1.xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+# Public SSH key placed on the instance for the opc user
+ssh_public_key = "ssh-rsa AAAA... your_public_key_here"
