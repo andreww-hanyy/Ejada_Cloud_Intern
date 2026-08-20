@@ -1,0 +1,25 @@
+# External block volume, requested through the OCI Block Volume CSI driver.
+#
+# Notes that matter for the demo:
+#   * storageClassName "oci-bv" is pre-installed on OKE and maps to the
+#     provisioner blockvolume.csi.oraclecloud.com.
+#   * 50Gi is the OCI minimum. Anything smaller is silently rounded up.
+#   * The class uses volumeBindingMode: WaitForFirstConsumer, so this PVC stays
+#     Pending until a pod is scheduled -- that is expected, not a fault. It
+#     guarantees the volume is created in the same AD as the node.
+#   * A block volume is ReadWriteOnce: exactly one node may mount it at a time.
+#     That is why the Deployment is pinned to 1 replica with strategy Recreate.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nginx-content
+  namespace: ejada-w3
+  labels:
+    app: nginx-demo
+spec:
+  storageClassName: oci-bv
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 50Gi

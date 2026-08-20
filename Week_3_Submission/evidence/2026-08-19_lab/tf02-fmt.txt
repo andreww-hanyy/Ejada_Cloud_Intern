@@ -1,0 +1,4 @@
+# tf02-fmt
+# 2026-08-20 03:21:01 +0300
+$ terraform fmt -check -recursive
+

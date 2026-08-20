@@ -1,0 +1,8 @@
+# k8s04-cluster-info
+# 2026-08-20 03:32:32 +0300
+$ kubectl cluster-info
+
+Kubernetes control plane is running at https://193.122.88.109:6443
+CoreDNS is running at https://193.122.88.109:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.

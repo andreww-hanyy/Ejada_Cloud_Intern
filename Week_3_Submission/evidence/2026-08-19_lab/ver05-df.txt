@@ -1,0 +1,7 @@
+# ver05-df
+# 2026-08-20 03:46:55 +0300
+$ kubectl exec -n ejada-w3 deploy/nginx-demo -- df -h /usr/share/nginx/html
+
+Defaulted container "nginx" out of: nginx, seed-content (init)
+Filesystem                Size      Used Available Use% Mounted on
+/dev/sdb                 48.9G     32.0K     48.9G   0% /usr/share/nginx/html

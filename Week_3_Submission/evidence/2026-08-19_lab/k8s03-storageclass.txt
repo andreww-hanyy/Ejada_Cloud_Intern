@@ -1,0 +1,7 @@
+# k8s03-storageclass
+# 2026-08-20 03:32:28 +0300
+$ kubectl get storageclass
+
+NAME               PROVISIONER                       RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
+oci                oracle.com/oci                    Delete          Immediate              false                  5m36s
+oci-bv (default)   blockvolume.csi.oraclecloud.com   Delete          WaitForFirstConsumer   true                   5m36s

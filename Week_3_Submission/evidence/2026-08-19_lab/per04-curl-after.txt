@@ -1,0 +1,18 @@
+# per04-curl-after
+# 2026-08-20 03:48:33 +0300
+$ curl -s --max-time 20 http://144.24.222.84
+
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Ejada Week 3 - OKE</title>
+<style>body{font-family:system-ui,sans-serif;margin:4rem auto;max-width:40rem;line-height:1.6}
+code{background:#f2f2f2;padding:.1rem .3rem;border-radius:3px}</style></head>
+<body>
+<h1>Ejada Internship &mdash; Week 3</h1>
+<p>Served by NGINX on <strong>Oracle Container Engine for Kubernetes</strong>.</p>
+<ul>
+  <li>Cluster: VCN-native pod networking (<code>OCI_VCN_IP_NATIVE</code>)</li>
+  <li>Storage: this file lives on an external OCI Block Volume, mounted through the CSI driver</li>
+  <li>Exposure: OCI Load Balancer, provisioned by a Kubernetes <code>Service</code> of type <code>LoadBalancer</code></li>
+</ul>
+<p>Infrastructure built with reusable Terraform modules.</p>
+</body></html>

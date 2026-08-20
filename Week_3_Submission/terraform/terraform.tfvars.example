@@ -1,0 +1,66 @@
+###############################################################################
+# Copy to terraform.tfvars and fill in. terraform.tfvars is gitignored --
+# it holds OCIDs and the path to your API signing key.
+###############################################################################
+
+# --- Provider / identity ----------------------------------------------------
+tenancy_ocid     = "ocid1.tenancy.oc1..xxxxxxxx"
+user_ocid        = "ocid1.user.oc1..xxxxxxxx"
+fingerprint      = "aa:bb:cc:dd:ee:ff:00:11:22:33:44:55:66:77:88:99"
+private_key_path = "C:/Users/HP/.oci/oci_api_key.pem"
+region           = "me-jeddah-1"
+compartment_id   = "ocid1.compartment.oc1..xxxxxxxx" # intern-04-andrew-hany-cmp
+
+# --- Naming -----------------------------------------------------------------
+prefix = "ejada-w3-dev"
+
+# --- Addressing -------------------------------------------------------------
+vcn_cidr = "10.0.0.0/16"
+
+subnet_cidrs = {
+  api     = "10.0.0.0/29"  # public,  Kubernetes API endpoint
+  workers = "10.0.1.0/24"  # private, managed worker nodes
+  lb      = "10.0.2.0/24"  # public,  service load balancers
+  pods    = "10.0.32.0/19" # private, VCN-native pod IPs -- sized big on purpose
+}
+
+enable_flow_logs         = true
+flow_logs_retention_days = 30
+
+# --- Cluster ----------------------------------------------------------------
+cluster_type       = "ENHANCED_CLUSTER"
+cni_type           = "OCI_VCN_IP_NATIVE"
+endpoint_is_public = true
+
+# null = newest version the region offers, discovered at plan time.
+#
+# PIN THIS after the first apply. kubernetes_version is updatable on both the
+# cluster and the node pool, so while it stays null, the day OKE publishes a
+# newer version an unrelated `terraform apply` will propose a control-plane
+# upgrade you did not ask for. Read it back with:
+#     terraform output kubernetes_version
+# and paste the value here.
+kubernetes_version = null
+
+# TIGHTEN THIS before anything that is not a lab. Your own public IP as a /32
+# is the right value.
+kubectl_source_cidr = "0.0.0.0/0"
+
+# --- Node pools -------------------------------------------------------------
+node_pools = {
+  app = {
+    shape         = "VM.Standard.E4.Flex"
+    size          = 2
+    ocpus         = 2
+    memory_in_gbs = 16
+    ad_indexes    = [0]
+    node_labels   = { workload = "general" }
+  }
+}
+
+# --- Add-ons (optional, ENHANCED_CLUSTER only) ------------------------------
+cluster_addons = {}
+
+# --- Application exposure ---------------------------------------------------
+app_ingress_ports = [80]
+app_source_cidr   = "0.0.0.0/0"

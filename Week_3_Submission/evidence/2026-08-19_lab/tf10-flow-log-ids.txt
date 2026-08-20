@@ -1,0 +1,10 @@
+# tf10-flow-log-ids
+# 2026-08-20 03:31:33 +0300
+$ terraform output flow_log_ids
+
+{
+  "api" = "ocid1.log.oc1.me-jeddah-1.amaaaaaavjakbnia3hmopt42aqxlvvzvpw4r73upw7gq6e75hrqgah56qlbq"
+  "lb" = "ocid1.log.oc1.me-jeddah-1.amaaaaaavjakbniaht7mff4wo3htuj5k4aja6s2o7xfnbewhofkhfml2ocuq"
+  "pods" = "ocid1.log.oc1.me-jeddah-1.amaaaaaavjakbnia6tpzbtkviddc4vvgg476jndsihx526iceurh5v4knejq"
+  "workers" = "ocid1.log.oc1.me-jeddah-1.amaaaaaavjakbnia5uuy6i2odfg7mar7fx6gzgggtkg43ccxa4vekcn4wpoa"
+}

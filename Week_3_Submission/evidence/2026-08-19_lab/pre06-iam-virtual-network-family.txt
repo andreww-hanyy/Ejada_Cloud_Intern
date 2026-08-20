@@ -1,0 +1,4 @@
+# pre06-iam-virtual-network-family
+# 2026-08-19 23:08:36 +0300
+$ oci network vcn list --compartment-id ocid1.compartment.oc1..aaaaaaaailyh6kxi6cvudfbv2udyabd42ak3xfgrbiu6xqpjeuws6taxoezq
+

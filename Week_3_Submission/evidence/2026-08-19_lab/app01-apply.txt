@@ -1,0 +1,8 @@
+# app01-apply
+# 2026-08-20 03:32:45 +0300
+$ kubectl apply -f /e/Ejada/Week 3/week_3_submission/k8s
+
+namespace/ejada-w3 created
+persistentvolumeclaim/nginx-content created
+deployment.apps/nginx-demo created
+service/nginx-demo created

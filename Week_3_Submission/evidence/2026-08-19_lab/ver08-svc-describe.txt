@@ -1,0 +1,35 @@
+# ver08-svc-describe
+# 2026-08-20 03:47:11 +0300
+$ kubectl describe svc nginx-demo -n ejada-w3
+
+Name:                     nginx-demo
+Namespace:                ejada-w3
+Labels:                   app=nginx-demo
+Annotations:              oci.oraclecloud.com/load-balancer-type: lb
+                          service.beta.kubernetes.io/oci-load-balancer-internal: false
+                          service.beta.kubernetes.io/oci-load-balancer-security-list-management-mode: None
+                          service.beta.kubernetes.io/oci-load-balancer-shape: flexible
+                          service.beta.kubernetes.io/oci-load-balancer-shape-flex-max: 10
+                          service.beta.kubernetes.io/oci-load-balancer-shape-flex-min: 10
+Selector:                 app=nginx-demo
+Type:                     LoadBalancer
+IP Family Policy:         SingleStack
+IP Families:              IPv4
+IP:                       10.96.120.122
+IPs:                      10.96.120.122
+LoadBalancer Ingress:     144.24.222.84 (VIP)
+Port:                     http  80/TCP
+TargetPort:               http/TCP
+NodePort:                 http  32222/TCP
+Endpoints:                10.0.33.44:80
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Internal Traffic Policy:  Cluster
+Events:
+  Type     Reason                  Age                From                Message
+  ----     ------                  ----               ----                -------
+  Normal   EnsuringLoadBalancer    14m                service-controller  Ensuring load balancer
+  Warning  SyncLoadBalancerFailed  14m (x3 over 14m)  service-controller  Error syncing load balancer: failed to ensure load balancer: An operation for the service is already in progress.
+  Normal   EnsuredLoadBalancer     14m                service-controller  Ensured load balancer
+  Normal   EnsuringLoadBalancer    13m (x4 over 14m)  service-controller  Ensuring load balancer
+  Normal   EnsuredLoadBalancer     13m                service-controller  Ensured load balancer

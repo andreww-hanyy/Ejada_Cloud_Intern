@@ -1,0 +1,5 @@
+pod before deletion : nginx-demo-78b45748dc-p7sfn
+pod after deletion  : nginx-demo-78b45748dc-xmnj5
+
+The seeded.txt timestamp is identical across the two pods. The file lives on
+the block volume, not in the container image, so it survived the pod.

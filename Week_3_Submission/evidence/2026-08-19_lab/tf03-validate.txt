@@ -1,0 +1,6 @@
+# tf03-validate
+# 2026-08-20 03:21:01 +0300
+$ terraform validate
+
+[32m[1mSuccess![0m The configuration is valid.
+[0m

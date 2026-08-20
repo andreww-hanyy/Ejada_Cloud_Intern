@@ -1,0 +1,28 @@
+# ver09-curl
+# 2026-08-20 03:47:15 +0300
+$ curl -s -i --max-time 20 http://144.24.222.84
+
+HTTP/1.1 200 OK
+Server: nginx/1.27.5
+Date: Thu, 20 Aug 2026 00:47:17 GMT
+Content-Type: text/html
+Content-Length: 777
+Last-Modified: Thu, 20 Aug 2026 00:33:42 GMT
+Connection: keep-alive
+ETag: "6a864b66-309"
+Accept-Ranges: bytes
+
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Ejada Week 3 - OKE</title>
+<style>body{font-family:system-ui,sans-serif;margin:4rem auto;max-width:40rem;line-height:1.6}
+code{background:#f2f2f2;padding:.1rem .3rem;border-radius:3px}</style></head>
+<body>
+<h1>Ejada Internship &mdash; Week 3</h1>
+<p>Served by NGINX on <strong>Oracle Container Engine for Kubernetes</strong>.</p>
+<ul>
+  <li>Cluster: VCN-native pod networking (<code>OCI_VCN_IP_NATIVE</code>)</li>
+  <li>Storage: this file lives on an external OCI Block Volume, mounted through the CSI driver</li>
+  <li>Exposure: OCI Load Balancer, provisioned by a Kubernetes <code>Service</code> of type <code>LoadBalancer</code></li>
+</ul>
+<p>Infrastructure built with reusable Terraform modules.</p>
+</body></html>

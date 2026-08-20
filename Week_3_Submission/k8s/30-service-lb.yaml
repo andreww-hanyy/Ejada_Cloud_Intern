@@ -1,0 +1,48 @@
+# Service of type LoadBalancer. The OCI cloud-controller-manager running in
+# the cluster sees this and provisions a real OCI Load Balancer in the subnet(s)
+# registered on the cluster as service_lb_subnet_ids -- which Terraform set to
+# the public LB subnet.
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-demo
+  namespace: ejada-w3
+  labels:
+    app: nginx-demo
+  annotations:
+    # "lb" = OCI Load Balancer (L7-capable). Use "nlb" for a Network Load Balancer.
+    oci.oraclecloud.com/load-balancer-type: "lb"
+
+    # Flexible shape: pick the bandwidth band. 10 Mbps min/max is the cheapest.
+    service.beta.kubernetes.io/oci-load-balancer-shape: "flexible"
+    service.beta.kubernetes.io/oci-load-balancer-shape-flex-min: "10"
+    service.beta.kubernetes.io/oci-load-balancer-shape-flex-max: "10"
+
+    # Public load balancer.
+    service.beta.kubernetes.io/oci-load-balancer-internal: "false"
+
+    # IMPORTANT. This defaults to "All", which makes the OCI cloud-controller-
+    # manager write its own rules into the security lists attached to the LB
+    # subnet and the worker subnet -- the two lists Terraform owns. The next
+    # `terraform plan` would then show those rules being removed, and apply
+    # would remove them: permanent drift, and a plan that is never clean.
+    #
+    # "None" tells the CCM to manage no security list rules at all, because
+    # Terraform has already opened exactly what is needed (LB -> workers on
+    # 30000-32767 and 10256, internet -> LB on the app ports).
+    service.beta.kubernetes.io/oci-load-balancer-security-list-management-mode: "None"
+
+    # Optional: pin the LB to a specific subnet. Not needed here because the
+    # cluster already has service_lb_subnet_ids set by Terraform. Uncomment and
+    # paste `terraform output lb_subnet_id` if you want it explicit.
+    # service.beta.kubernetes.io/oci-load-balancer-subnet1: "ocid1.subnet.oc1..."
+spec:
+  type: LoadBalancer
+  externalTrafficPolicy: Cluster
+  selector:
+    app: nginx-demo
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+      protocol: TCP

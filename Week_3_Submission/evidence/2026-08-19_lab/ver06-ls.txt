@@ -1,0 +1,11 @@
+# ver06-ls
+# 2026-08-20 03:46:59 +0300
+$ kubectl exec -n ejada-w3 deploy/nginx-demo -- ls -la /usr/share/nginx/html
+
+Defaulted container "nginx" out of: nginx, seed-content (init)
+total 28
+drwxr-xr-x    3 root     root          4096 Aug 20 00:33 .
+drwxr-xr-x    3 root     root            18 Apr 16  2025 ..
+-rw-r--r--    1 root     root           777 Aug 20 00:33 index.html
+drwx------    2 root     root         16384 Aug 20 00:33 lost+found
+-rw-r--r--    1 root     root            39 Aug 20 00:33 seeded.txt

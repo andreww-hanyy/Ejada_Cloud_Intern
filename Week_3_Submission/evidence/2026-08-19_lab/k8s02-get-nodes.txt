@@ -1,0 +1,7 @@
+# k8s02-get-nodes
+# 2026-08-20 03:32:24 +0300
+$ kubectl get nodes -o wide
+
+NAME         STATUS   ROLES   AGE   VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE                   KERNEL-VERSION                           CONTAINER-RUNTIME
+10.0.1.147   Ready    node    86s   v1.36.1   10.0.1.147    <none>        Oracle Linux Server 8.10   5.15.0-321.202.5.el8uek.x86_64 (amd64)   cri-o://1.36.0-16.81af8589483.el8
+10.0.1.246   Ready    node    99s   v1.36.1   10.0.1.246    <none>        Oracle Linux Server 8.10   5.15.0-321.202.5.el8uek.x86_64 (amd64)   cri-o://1.36.0-16.81af8589483.el8

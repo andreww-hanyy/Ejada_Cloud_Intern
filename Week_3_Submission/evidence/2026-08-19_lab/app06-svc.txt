@@ -1,0 +1,6 @@
+# app06-svc
+# 2026-08-20 03:43:21 +0300
+$ kubectl get svc -n ejada-w3 -o wide
+
+NAME         TYPE           CLUSTER-IP      EXTERNAL-IP     PORT(S)        AGE   SELECTOR
+nginx-demo   LoadBalancer   10.96.120.122   144.24.222.84   80:32222/TCP   10m   app=nginx-demo

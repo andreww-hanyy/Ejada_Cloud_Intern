@@ -1,0 +1,9 @@
+# app03-pvc
+# 2026-08-20 03:43:05 +0300
+$ kubectl get pvc,pv -n ejada-w3
+
+NAME                                  STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+persistentvolumeclaim/nginx-content   Bound    csi-6458d903-604b-4786-8317-1fcb985c4416   50Gi       RWO            oci-bv         <unset>                 10m
+
+NAME                                                        CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                    STORAGECLASS   VOLUMEATTRIBUTESCLASS   REASON   AGE
+persistentvolume/csi-6458d903-604b-4786-8317-1fcb985c4416   50Gi       RWO            Delete           Bound    ejada-w3/nginx-content   oci-bv         <unset>                          10m

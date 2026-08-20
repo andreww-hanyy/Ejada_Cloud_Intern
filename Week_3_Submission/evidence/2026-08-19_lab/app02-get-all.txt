@@ -1,0 +1,15 @@
+# app02-get-all
+# 2026-08-20 03:43:00 +0300
+$ kubectl get all -n ejada-w3
+
+NAME                              READY   STATUS              RESTARTS   AGE
+pod/nginx-demo-8698c8867f-gkxjr   0/1     ImageInspectError   0          10m
+
+NAME                 TYPE           CLUSTER-IP      EXTERNAL-IP     PORT(S)        AGE
+service/nginx-demo   LoadBalancer   10.96.120.122   144.24.222.84   80:32222/TCP   10m
+
+NAME                         READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/nginx-demo   0/1     1            0           10m
+
+NAME                                    DESIRED   CURRENT   READY   AGE
+replicaset.apps/nginx-demo-8698c8867f   1         1         0       10m

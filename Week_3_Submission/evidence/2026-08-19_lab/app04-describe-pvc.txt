@@ -1,0 +1,27 @@
+# app04-describe-pvc
+# 2026-08-20 03:43:09 +0300
+$ kubectl describe pvc nginx-content -n ejada-w3
+
+Name:          nginx-content
+Namespace:     ejada-w3
+StorageClass:  oci-bv
+Status:        Bound
+Volume:        csi-6458d903-604b-4786-8317-1fcb985c4416
+Labels:        app=nginx-demo
+Annotations:   pv.kubernetes.io/bind-completed: yes
+               pv.kubernetes.io/bound-by-controller: yes
+               volume.beta.kubernetes.io/storage-provisioner: blockvolume.csi.oraclecloud.com
+               volume.kubernetes.io/selected-node: 10.0.1.147
+               volume.kubernetes.io/storage-provisioner: blockvolume.csi.oraclecloud.com
+Finalizers:    [kubernetes.io/pvc-protection]
+Capacity:      50Gi
+Access Modes:  RWO
+VolumeMode:    Filesystem
+Used By:       nginx-demo-8698c8867f-gkxjr
+Events:
+  Type    Reason                 Age                From                                                                                                  Message
+  ----    ------                 ----               ----                                                                                                  -------
+  Normal  WaitForFirstConsumer   10m                persistentvolume-controller                                                                           waiting for first consumer to be created before binding
+  Normal  Provisioning           10m                blockvolume.csi.oraclecloud.com_control-plane-host-10-64-217-16_6cf585e2-fa63-44de-aebf-c2710654f3cb  External provisioner is provisioning volume for claim "ejada-w3/nginx-content"
+  Normal  ExternalProvisioning   10m (x3 over 10m)  persistentvolume-controller                                                                           Waiting for a volume to be created either by the external provisioner 'blockvolume.csi.oraclecloud.com' or manually by the system administrator. If volume creation is delayed, please verify that the provisioner is running and correctly registered.
+  Normal  ProvisioningSucceeded  10m                blockvolume.csi.oraclecloud.com_control-plane-host-10-64-217-16_6cf585e2-fa63-44de-aebf-c2710654f3cb  Successfully provisioned volume csi-6458d903-604b-4786-8317-1fcb985c4416

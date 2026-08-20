@@ -1,0 +1,6 @@
+# per03-seeded-after
+# 2026-08-20 03:48:22 +0300
+$ kubectl exec -n ejada-w3 deploy/nginx-demo -- cat /usr/share/nginx/html/seeded.txt
+
+Defaulted container "nginx" out of: nginx, seed-content (init)
+seeded at Thu Aug 20 00:33:42 UTC 2026

@@ -1,0 +1,140 @@
+# tf09-outputs-json
+# 2026-08-20 03:31:32 +0300
+$ terraform output -json
+
+{
+  "cluster_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": "ocid1.cluster.oc1.me-jeddah-1.aaaaaaaab5nyp6dca5ammk3huwf4gjx2p7ocqzssfstbr4inbc52gsv3enma"
+  },
+  "cluster_public_endpoint": {
+    "sensitive": false,
+    "type": "string",
+    "value": "193.122.88.109:6443"
+  },
+  "flow_log_ids": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "api": "string",
+        "lb": "string",
+        "pods": "string",
+        "workers": "string"
+      }
+    ],
+    "value": {
+      "api": "ocid1.log.oc1.me-jeddah-1.amaaaaaavjakbnia3hmopt42aqxlvvzvpw4r73upw7gq6e75hrqgah56qlbq",
+      "lb": "ocid1.log.oc1.me-jeddah-1.amaaaaaavjakbniaht7mff4wo3htuj5k4aja6s2o7xfnbewhofkhfml2ocuq",
+      "pods": "ocid1.log.oc1.me-jeddah-1.amaaaaaavjakbnia6tpzbtkviddc4vvgg476jndsihx526iceurh5v4knejq",
+      "workers": "ocid1.log.oc1.me-jeddah-1.amaaaaaavjakbnia5uuy6i2odfg7mar7fx6gzgggtkg43ccxa4vekcn4wpoa"
+    }
+  },
+  "kubeconfig_command": {
+    "sensitive": false,
+    "type": "string",
+    "value": "oci ce cluster create-kubeconfig --cluster-id ocid1.cluster.oc1.me-jeddah-1.aaaaaaaab5nyp6dca5ammk3huwf4gjx2p7ocqzssfstbr4inbc52gsv3enma --file $HOME/.kube/config --region me-jeddah-1 --token-version 2.0.0 --kube-endpoint PUBLIC_ENDPOINT"
+  },
+  "kubernetes_version": {
+    "sensitive": false,
+    "type": "string",
+    "value": "v1.36.1"
+  },
+  "lb_subnet_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": "ocid1.subnet.oc1.me-jeddah-1.aaaaaaaax7h4odc3yvco34v6uvje4s7eyskcb3pwk6hjnv7fk2xdje7ltiha"
+  },
+  "node_pool_ids": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "app": "string"
+      }
+    ],
+    "value": {
+      "app": "ocid1.nodepool.oc1.me-jeddah-1.aaaaaaaawv6l7khgnphylpbr7il5iazu43jqumzlk7udu4wj5n3i7ppnswoa"
+    }
+  },
+  "node_pool_images": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "app": "string"
+      }
+    ],
+    "value": {
+      "app": "ocid1.image.oc1.me-jeddah-1.aaaaaaaawv57iy2lnhx6j22eb7uj6qyjoqabfumwu75eew7v6vt5h5d3pjoa"
+    }
+  },
+  "subnets": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "api": [
+          "object",
+          {
+            "cidr": "string",
+            "id": "string",
+            "is_public": "bool"
+          }
+        ],
+        "lb": [
+          "object",
+          {
+            "cidr": "string",
+            "id": "string",
+            "is_public": "bool"
+          }
+        ],
+        "pods": [
+          "object",
+          {
+            "cidr": "string",
+            "id": "string",
+            "is_public": "bool"
+          }
+        ],
+        "workers": [
+          "object",
+          {
+            "cidr": "string",
+            "id": "string",
+            "is_public": "bool"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "api": {
+        "cidr": "10.0.0.0/29",
+        "id": "ocid1.subnet.oc1.me-jeddah-1.aaaaaaaamxmmqoulyym6qk6rzwzk25dausqh4cuue5nfkjs64ibo3auolr4q",
+        "is_public": true
+      },
+      "lb": {
+        "cidr": "10.0.2.0/24",
+        "id": "ocid1.subnet.oc1.me-jeddah-1.aaaaaaaax7h4odc3yvco34v6uvje4s7eyskcb3pwk6hjnv7fk2xdje7ltiha",
+        "is_public": true
+      },
+      "pods": {
+        "cidr": "10.0.32.0/19",
+        "id": "ocid1.subnet.oc1.me-jeddah-1.aaaaaaaaltfivedue5nnpuot2orv5d4n4fwkof3vluxevspntzfuhetwxfta",
+        "is_public": false
+      },
+      "workers": {
+        "cidr": "10.0.1.0/24",
+        "id": "ocid1.subnet.oc1.me-jeddah-1.aaaaaaaa7jfd6xh4g6oadubkgnecmfxxf6e4n57roifbzz6izork6zk5vm3a",
+        "is_public": false
+      }
+    }
+  },
+  "vcn_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": "ocid1.vcn.oc1.me-jeddah-1.amaaaaaavjakbnia3cc3nvwtui7vgdstpuvatuwqm5jmdwl3ed73yy6efekq"
+  }
+}

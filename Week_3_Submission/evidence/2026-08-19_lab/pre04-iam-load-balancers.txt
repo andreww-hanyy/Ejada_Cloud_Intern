@@ -1,0 +1,4 @@
+# pre04-iam-load-balancers
+# 2026-08-19 23:08:19 +0300
+$ oci lb load-balancer list --compartment-id ocid1.compartment.oc1..aaaaaaaailyh6kxi6cvudfbv2udyabd42ak3xfgrbiu6xqpjeuws6taxoezq
+

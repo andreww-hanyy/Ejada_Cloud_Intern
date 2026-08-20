@@ -1,0 +1,6 @@
+# ver01-pods-wide
+# 2026-08-20 03:46:39 +0300
+$ kubectl get pods -n ejada-w3 -o wide
+
+NAME                          READY   STATUS    RESTARTS   AGE     IP           NODE         NOMINATED NODE   READINESS GATES
+nginx-demo-78b45748dc-p7sfn   1/1     Running   0          2m38s   10.0.33.44   10.0.1.147   <none>           <none>
